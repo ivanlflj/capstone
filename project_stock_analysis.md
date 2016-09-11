@@ -15,7 +15,7 @@ PUM will predict a day that the stock price will move up. The objective here is 
 
 The choosen stock to be analyzed in the study is the ITSA4 (ITAUSA INVESTIMENTOS ITAU S.A. - Preferred stock). The reason for choosing this stock is because it has a long historical data and the negotiation is substancial. Other stocks can be analysed later using PUM just fitting their data.
 
-The data used is raw data from the negotiations from 2006 to 2015, it will be over 2500 days of negotiation and it will be gathered from the [Bovespa website](http://www.bmfbovespa.com.br/). The data gives the price variation of the stocks in each day (open, high, low, close) and volume of the negotiation in the day.
+The data used is raw data from the negotiations from 2006 to 2015, it will be over 2000 days of negotiation and it will be gathered from the [Bovespa website](http://www.bmfbovespa.com.br/). The data gives the price variation of the stocks in each day (open, high, low, close) and volume of the negotiation in the day.
 
 As a bonus analysis, we will verify if buying in the open price and selling in the low price will give money if we follow PUM prediction. It is possible that the losses in the days it misses are bigger than the gains in the days it is right, this is the main reason to have it as a bonus analysis.
 
