@@ -6,7 +6,7 @@ September XXth, 2016
 ## I. Definition
 The stock market is full of opportunities, every day billions of reais are negociated in the market. Over than half a million citizens have money invested in Bovespa with 120 billion reais of assets inside Bovespa, only in the hand of citizens, excluding companies owning assets. The amount of money and opportunity are big but also are the risks, plenty of people lose their money on the market, some of them losing large amounts.
 
-In this scenario, our objective is to create a machine learning algorithm that would be able to predict the day a stock will go up. With this in hand, we would be able to invest these days in the choosen stock. The idea is to have the money in the stock for just one day. This opens the possibility to invest with leverage (lended money) for free, only considering the risk of the operation. (In this report leverage will not be explained, check [this link](http://www.investopedia.com/articles/investing/073113/leverage-what-it-and-how-it-works.asp) for more information.)
+In this scenario, our objective is to create a machine learning algorithm that would be able to predict the day a stock will go up. With this in hand, we would be able to increase the probability of ours intraday trades. The idea is to improve the trades that are done in the stock for just one day. This opens the possibility to invest with leverage (lended money) for free, only considering the risk of the operation. (In this report leverage will not be explained, check [this link](http://www.investopedia.com/articles/investing/073113/leverage-what-it-and-how-it-works.asp) for more information.)
 
 The algorithm name is PUM (Predictive Upside of the Market).
 
@@ -15,17 +15,26 @@ PUM will predict a day that the stock price will move up. The objective here is 
 
 The choosen stock to be analyzed in the study is the ITSA4 (ITAUSA INVESTIMENTOS ITAU S.A. - Preferred stock). The reason for choosing this stock is because it has a long historical data and the negotiation is substancial. Other stocks can be analysed later using PUM just fitting their data.
 
-The data used is raw data from the negotiations from 2006 to 2015, it will be over 2000 days of negotiation and it will be gathered from the [Bovespa website](http://www.bmfbovespa.com.br/). The data gives the price variation of the stocks in each day (open, high, low, close) and volume of the negotiation in the day.
+The data used is raw data of the negotiations from 2006 to 2015, it will be over 2000 days of negotiation and it will be gathered from the [Bovespa website](http://www.bmfbovespa.com.br/). The data gives the price variation of the stocks in each day (open, high, low, close) and volume of the negotiation in the day.
 
 As a bonus analysis, we will verify if buying in the open price and selling in the low price will give money if we follow PUM prediction. It is possible that the losses in the days it misses are bigger than the gains in the days it is right, this is the main reason to have it as a bonus analysis.
 
 ### Problem Statement
-In this section, you will want to clearly define the problem that you are trying to solve, including the strategy (outline of tasks) you will use to achieve the desired solution. You should also thoroughly discuss what the intended solution will be for this problem. Questions to ask yourself when writing this section:
-- _Is the problem statement clearly defined? Will the reader understand what you are expecting to solve?_
-- _Have you thoroughly discussed how you will attempt to solve the problem?_
-- _Is an anticipated solution clearly defined? Will the reader understand what results you are looking for?_
+We invest in a market that moves up and down, the probability that a given day it moves up is lower than 50%, in the last 10 years. Our intention is to have a higher probability in the days we decide to invest.
+
+We will break the main objective into steps:
+- Gather and prepare the data for analysis
+- Include [technical analysis](XXXXXXXX) indicators
+- Clean the data for usage in the Machine Learning
+- Divide the data in training and test data
+- Prepare the machine learning with Decision Tree, K-neighbors, AdaBoost and Random Forest
+- Test is with and without PCA
+- Evaluate the performance and pick the best model
+- (Bonus analysis) Check the stock performance of the choosen model in the test data
 
 ### Metrics
+To evaluate the performance of the model we have decided to use the precision score. The main objective of our analysis is to be in the market when there is a higher probability of gaining money. There is no problem that the market goes up when we are outside of it. XXXXXXXXXXXXX
+
 In this section, you will need to clearly define the metrics or calculations you will use to measure performance of a model or result in your project. These calculations and metrics should be justified based on the characteristics of the problem and problem domain. Questions to ask yourself when writing this section:
 - _Are the metrics you’ve chosen to measure the performance of your models clearly discussed and defined?_
 - _Have you provided reasonable justification for the metrics chosen based on the problem and solution?_
