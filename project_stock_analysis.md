@@ -24,7 +24,7 @@ We invest in a market that moves up and down, the probability that a given day i
 
 We will break the main objective into steps:
 - Gather and prepare the data for analysis
-- Include [technical analysis](XXXXXXXX) indicators
+- Include [technical analysis](http://www.investopedia.com/university/technical/) indicators
 - Clean the data for usage in the Machine Learning
 - Divide the data in training and test data
 - Prepare the machine learning with Decision Tree, K-neighbors, AdaBoost and Random Forest
@@ -33,11 +33,9 @@ We will break the main objective into steps:
 - (Bonus analysis) Check the stock performance of the choosen model in the test data
 
 ### Metrics
-To evaluate the performance of the model we have decided to use the precision score. The main objective of our analysis is to be in the market when there is a higher probability of gaining money. There is no problem that the market goes up when we are outside of it. XXXXXXXXXXXXX
+To evaluate the performance of the model we have decided to use the precision score. The main objective of our analysis is to be in the market when there is a higher probability of gaining money. There is no problem that the market goes up when we are outside of it. We want to avoid the market going down when we are inside it.
 
-In this section, you will need to clearly define the metrics or calculations you will use to measure performance of a model or result in your project. These calculations and metrics should be justified based on the characteristics of the problem and problem domain. Questions to ask yourself when writing this section:
-- _Are the metrics you’ve chosen to measure the performance of your models clearly discussed and defined?_
-- _Have you provided reasonable justification for the metrics chosen based on the problem and solution?_
+For this reason, precision score was the best score in our point of view. We try to maximize the amount of true positive (positive trades that we considered positives) and to reduce the false positives (negative trades that we considered positive).
 
 
 ## II. Analysis
