@@ -39,9 +39,12 @@ For this reason, precision score was the best score in our point of view. We try
 
 
 ## II. Analysis
-_(approx. 2-4 pages)_
 
 ### Data Exploration
+The data used in this project is the historical prices of the stock for 10 years. The close price of the stock is in the grph above.
+
+!(price.png)
+
 In this section, you will be expected to analyze the data you are using for the problem. This data can either be in the form of a dataset (or datasets), input data (or input files), or even an environment. The type of data should be thoroughly described and, if possible, have basic statistics and information presented (such as discussion of input features or defining characteristics about the input or environment). Any abnormalities or interesting qualities about the data that may need to be addressed have been identified (such as features that need to be transformed or the possibility of outliers). Questions to ask yourself when writing this section:
 - _If a dataset is present for this problem, have you thoroughly discussed certain features about the dataset? Has a data sample been provided to the reader?_
 - _If a dataset is present for this problem, are statistics about the dataset calculated and reported? Have any relevant results from this calculation been discussed?_
