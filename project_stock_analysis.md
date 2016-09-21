@@ -41,21 +41,56 @@ For this reason, precision score was the best score in our point of view. We try
 ## II. Analysis
 
 ### Data Exploration
-The data used in this project is the historical prices of the stock for 10 years. The close price of the stock is in the grph above.
+The data used in this project is the historical prices and volumes of the stock for 10 years. The close price of the stock is in the graph above.
 
 ![Prices graph](https://github.com/ivanlflj/capstone/blob/master/prices.png)
 
-In this section, you will be expected to analyze the data you are using for the problem. This data can either be in the form of a dataset (or datasets), input data (or input files), or even an environment. The type of data should be thoroughly described and, if possible, have basic statistics and information presented (such as discussion of input features or defining characteristics about the input or environment). Any abnormalities or interesting qualities about the data that may need to be addressed have been identified (such as features that need to be transformed or the possibility of outliers). Questions to ask yourself when writing this section:
-- _If a dataset is present for this problem, have you thoroughly discussed certain features about the dataset? Has a data sample been provided to the reader?_
-- _If a dataset is present for this problem, are statistics about the dataset calculated and reported? Have any relevant results from this calculation been discussed?_
-- _If a dataset is **not** present for this problem, has discussion been made about the input space or input data for your problem?_
-- _Are there any abnormalities or characteristics about the input space or dataset that need to be addressed? (categorical variables, missing values, outliers, etc.)_
+To improve the data we have added some new features using the technical analysis indicators as Moving Average and Relative Strenght Index, in the images below. The detailed information about them are in the [Jupyter notebook](https://github.com/ivanlflj/capstone/blob/master/stock_analysis_code.ipynb).
+
+![Moving Average](https://github.com/ivanlflj/capstone/blob/master/ma50.png)
+
+![Relative Strenght Index](https://github.com/ivanlflj/capstone/blob/master/rsi.png)
+
+The volume of trades in each day are also presented here.
+
+![Volumes](https://github.com/ivanlflj/capstone/blob/master/volumes.png)
+
+Verifying the amount of days it moved up, we can see that it is less than half of them.
+
+![Days up](https://github.com/ivanlflj/capstone/blob/master/days_up.png)
+
+We also analized it depending of the day of the week and the month of the year.
+
+![Up week](https://github.com/ivanlflj/capstone/blob/master/up_week.png)
+
+![Up month](https://github.com/ivanlflj/capstone/blob/master/up_month.png)
 
 ### Exploratory Visualization
-In this section, you will need to provide some form of visualization that summarizes or extracts a relevant characteristic or feature about the data. The visualization should adequately support the data being used. Discuss why this visualization was chosen and how it is relevant. Questions to ask yourself when writing this section:
-- _Have you visualized a relevant characteristic or feature about the dataset or input data?_
-- _Is the visualization thoroughly analyzed and discussed?_
-- _If a plot is provided, are the axes, title, and datum clearly defined?_
+We also had performed tests checking if moving up in the previous 5 days changed the probability of moving up today.
+
+![Up previous](https://github.com/ivanlflj/capstone/blob/master/up_previous.png)
+
+From the volumes we could analyze the last volumes in relation of the previous volumes.
+
+![Up volumes](https://github.com/ivanlflj/capstone/blob/master/up_volumes.png)
+
+We also verified it for different Moving averages (in relation of the last price) and Relative Strenght Index.
+
+![MA5 up](https://github.com/ivanlflj/capstone/blob/master/ma5up.png)
+
+![MA8 up](https://github.com/ivanlflj/capstone/blob/master/ma8up.png)
+
+![MA21 up](https://github.com/ivanlflj/capstone/blob/master/ma21up.png)
+
+![MA50 up](https://github.com/ivanlflj/capstone/blob/master/ma50up.png)
+
+![RSI2 up](https://github.com/ivanlflj/capstone/blob/master/rsi2.png)
+
+![RSI5 up](https://github.com/ivanlflj/capstone/blob/master/rsi5.png)
+
+![RSI7 up](https://github.com/ivanlflj/capstone/blob/master/rsi7.png)
+
+![RSI14 up](https://github.com/ivanlflj/capstone/blob/master/rsi14.png)
 
 ### Algorithms and Techniques
 In this section, you will need to discuss the algorithms and techniques you intend to use for solving the problem. You should justify the use of each one based on the characteristics of the problem and the problem domain. Questions to ask yourself when writing this section:
