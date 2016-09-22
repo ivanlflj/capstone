@@ -93,20 +93,32 @@ We also verified it for different Moving averages (in relation of the last price
 ![RSI14 up](https://github.com/ivanlflj/capstone/blob/master/rsi14.png)
 
 ### Algorithms and Techniques
-Four algorithms were used to model the data: K-Neighbors, Decision tree, AdaBoost and Random Forest. For all of them we used some the GridSearch method to improve the parameters. There is a brief presentation of each algorithm below:
+Four algorithms were used to model the data: K-Nearest Neighbors, Decision tree, AdaBoost and Random Forest. For all of them we used some the GridSearch method to improve the parameters. There is a brief presentation of each algorithm below:
 
-K-Neighbors
+K-Nearest Neighbors:
+The model is based on check the a certain number (K) of nearest neighbors of the point we are trying to predict.
+![K-Nearest Neighbors example](http://scikit-learn.org/stable/_images/plot_classification_0011.png)
 
-In this section, you will need to discuss the algorithms and techniques you intend to use for solving the problem. You should justify the use of each one based on the characteristics of the problem and the problem domain. Questions to ask yourself when writing this section:
-- _Are the algorithms you will use, including any default variables/parameters in the project clearly defined?_
-- _Are the techniques to be used thoroughly discussed and justified?_
-- _Is it made clear how the input data or datasets will be handled by the algorithms and techniques chosen?_
+Decision tree:
+The decision tree creates several branches and conditions to predict the outcome of a certain model.
+![Decision tree example](http://scikit-learn.org/stable/_images/iris.svg)
+
+AdaBoost:
+The core principle of AdaBoost is to fit a sequence of weak learners (i.e., models that are only slightly better than random guessing, such as small decision trees) on repeatedly modified versions of the data. The predictions from all of them are then combined through a weighted majority vote (or sum) to produce the final prediction. 
+
+![AdaBoost example](http://scikit-learn.org/stable/_images/plot_adaboost_hastie_10_2_001.png)
+
+Random Forest:
+The random forest is a perturb-and-combine techniques specifically designed for trees. This means a diverse set of classifiers is created by introducing randomness in the classifier construction. The prediction of the ensemble is given as the averaged prediction of the individual classifiers.
+
+![Comparison with Random Forest](http://scikit-learn.org/stable/_images/plot_forest_iris_0011.png)
 
 ### Benchmark
-In this section, you will need to provide a clearly defined benchmark result or threshold for comparing across performances obtained by your solution. The reasoning behind the benchmark (in the case where it is not an established result) should be discussed. Questions to ask yourself when writing this section:
-- _Has some result or value been provided that acts as a benchmark for measuring performance?_
-- _Is it clear how this result or value was obtained (whether by data or by hypothesis)?_
+We can use two ways to predict a good model.
 
+First, we need to be better than random. The chance of chosing a day that the stock goes up is slightly less than 50%. Any improvement in this performance is positive.
+
+Second, if we buy stocks in the openning of the day and sell in the close we will have positive results. As mentioned before we do not expect to use the model to buy and sell stocks purely. The idea is to use a intraday model in combination with this one but anyway it is a good test.
 
 ## III. Methodology
 _(approx. 3-5 pages)_
