@@ -93,6 +93,10 @@ We also verified it for different Moving averages (in relation of the last price
 ![RSI14 up](https://github.com/ivanlflj/capstone/blob/master/rsi14.png)
 
 ### Algorithms and Techniques
+Four algorithms were used to model the data: K-Neighbors, Decision tree, AdaBoost and Random Forest. For all of them we used some the GridSearch method to improve the parameters. There is a brief presentation of each algorithm below:
+
+K-Neighbors
+
 In this section, you will need to discuss the algorithms and techniques you intend to use for solving the problem. You should justify the use of each one based on the characteristics of the problem and the problem domain. Questions to ask yourself when writing this section:
 - _Are the algorithms you will use, including any default variables/parameters in the project clearly defined?_
 - _Are the techniques to be used thoroughly discussed and justified?_
