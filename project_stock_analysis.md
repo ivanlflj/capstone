@@ -124,43 +124,61 @@ Second, if we buy stocks in the openning of the day and sell in the close we wil
 _(approx. 3-5 pages)_
 
 ### Data Preprocessing
-In this section, all of your preprocessing steps will need to be clearly documented, if any were necessary. From the previous section, any of the abnormalities or characteristics that you identified about the dataset will be addressed and corrected here. Questions to ask yourself when writing this section:
-- _If the algorithms chosen require preprocessing steps like feature selection or feature transformations, have they been properly documented?_
-- _Based on the **Data Exploration** section, if there were abnormalities or characteristics that needed to be addressed, have they been properly corrected?_
-- _If no preprocessing is needed, has it been made clear why?_
+From the original data, the days of each negociation were transformed in days of the week.
+
+The past prices became MAs, RSIs and prices for the last 15 days. All the prices were also divided by the last price, so it became a function of the last price, becoming numbers around 1.
+
+The past volumes became the last 5 volumes also divided by the last volume, so we have number around 1.
+
+We also used a function that selected the K best features to send to the data, in this case we changed K between 30, 50 and 70.
+
+PCA and ICA were tested but none of them delivered a good result. Some of the Ensemble models performed better with them but it was only because of the bias that the model had. In the end we considered the best model not having it.
 
 ### Implementation
-In this section, the process for which metrics, algorithms, and techniques that you implemented for the given data will need to be clearly documented. It should be abundantly clear how the implementation was carried out, and discussion should be made regarding any complications that occurred during this process. Questions to ask yourself when writing this section:
-- _Is it made clear how the algorithms and techniques were implemented with the given datasets or input data?_
-- _Were there any complications with the original metrics or techniques that required changing prior to acquiring a solution?_
-- _Was there any part of the coding process (e.g., writing complicated functions) that should be documented?_
+As previously mentioned the code is documented in the [Jupyter notebook](https://github.com/ivanlflj/capstone/blob/master/stock_analysis_code.ipynb) with explanation but here we will mention the most important things.
+
+The prediction of the model was really bad until we changed the target function. As mentioned in the Metrics chapter the objective of the model is to improve the chance of the market to move up and not to be always right. Since the models try to be always right we had to change a little the target. The target become to know when the stock would move 1% up. Using this target we were able to increase the chance of predicting a up in the price.
+
+To separate the data between train and test data we had to use the 1% up in the stratified data, in this case we had a good distribution of the days that moved more than 1% up.
+
+For all the algorithms we defined a GridSearchCV with the default crossvalidation of 3-fold. Since the data was already shuffled from the train_test_split we didn't need to worry to shuffle it.
+
+In the beginning we also tested the SVC but it was taking too long to run and it became impossible to use.
+
+It worth mentioning that we used Pipelines and it can be seen in the [Jupyter notebook](https://github.com/ivanlflj/capstone/blob/master/stock_analysis_code.ipynb).
 
 ### Refinement
-In this section, you will need to discuss the process of improvement you made upon the algorithms and techniques you used in your implementation. For example, adjusting parameters for certain models to acquire improved solutions would fall under the refinement category. Your initial and final solutions should be reported, as well as any significant intermediate results as necessary. Questions to ask yourself when writing this section:
-- _Has an initial solution been found and clearly reported?_
-- _Is the process of improvement clearly documented, such as what techniques were used?_
-- _Are intermediate and final solutions clearly reported as the process is improved?_
+All change in data done to improve the model were already mentioned previously.
 
+The Gridsearch was used since the beginning in all models so there is not much refinement here.
+
+The Pipelines were implemented later to be able to run the code faster and in a way that run all the possibilities. Before the pipelines the performance of the model were similar to random but being able to run more models faster it is possible to get several results and get the best one.
 
 ## IV. Results
-_(approx. 2-3 pages)_
 
 ### Model Evaluation and Validation
-In this section, the final model and any supporting qualities should be evaluated in detail. It should be clear how the final model was derived and why this model was chosen. In addition, some type of analysis should be used to validate the robustness of this model and its solution, such as manipulating the input data or environment to see how the model’s solution is affected (this is called sensitivity analysis). Questions to ask yourself when writing this section:
-- _Is the final model reasonable and aligning with solution expectations? Are the final parameters of the model appropriate?_
-- _Has the final model been tested with various inputs to evaluate whether the model generalizes well to unseen data?_
-- _Is the model robust enough for the problem? Do small perturbations (changes) in training data or the input space greatly affect the results?_
-- _Can results found from the model be trusted?_
+The chosen model is the Decision Tree not using PCA or ICA.
+
+Adaboost and Random Forest gave better performances in the training and testing data but they have really low trades, so it is probable overfitted.
+
+In the test data around 600 days, the decision tree has 26 trades in comparison of the ensemble models that had around of 5 trades. Decision tree trades 4% of the days what is low but it is a lot better than the ensemble models.
+
+In the training data the decision tree was able to reach a perfomance of 82%.
+
+In the test data the decision tree had a 62% in the precision score.
+
+The result appears to be a lot more reliable than the other models. We had the idea of preparing a learning curve and a validation curve but since we are training in the days that the market moves 1% up and checking with the days that the market moves up we were not able to perform it. We understand the importance of the curves but it would not be reliable here.
+
+Imagening the learning curves it is possible that it would be clear that we are still suferring a little bit from variance and more data would improve our model. We can in the future prepare the model to be used in more stocks or get more years so the model improves the performance.
 
 ### Justification
-In this section, your model’s final solution and its results should be compared to the benchmark you established earlier in the project using some type of statistical analysis. You should also justify whether these results and the solution are significant enough to have solved the problem posed in the project. Questions to ask yourself when writing this section:
-- _Are the final results found stronger than the benchmark result reported earlier?_
-- _Have you thoroughly analyzed and discussed the final solution?_
-- _Is the final solution significant enough to have solved the problem?_
+In comparison with the benchmark the performance of the model is good.
 
+By random the chance of picking a day that would move up is less than 50% and the model got a performance of 62%.
+
+If we used our model to buy one stock in the opening of the market and sell it in the close we would get out of the market in this test data with a profit of 0.04. It is positive but it is not good and we can consider as 0. But as mentioned before the idea is to improve the performance of other intraday methods and not having a negative result is already good start to improve the other trades.
 
 ## V. Conclusion
-_(approx. 1-2 pages)_
 
 ### Free-Form Visualization
 In this section, you will need to provide some form of visualization that emphasizes an important quality about the project. It is much more free-form, but should reasonably support a significant result or characteristic about the problem that you want to discuss. Questions to ask yourself when writing this section:
