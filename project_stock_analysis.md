@@ -181,32 +181,22 @@ If we used our model to buy one stock in the opening of the market and sell it i
 ## V. Conclusion
 
 ### Free-Form Visualization
-In this section, you will need to provide some form of visualization that emphasizes an important quality about the project. It is much more free-form, but should reasonably support a significant result or characteristic about the problem that you want to discuss. Questions to ask yourself when writing this section:
-- _Have you visualized a relevant or important quality about the problem, dataset, input data, or results?_
-- _Is the visualization thoroughly analyzed and discussed?_
-- _If a plot is provided, are the axes, title, and datum clearly defined?_
+The main image to show the performance of the model is the total data prediction if it is a positive day or not. The image is shown below and it is the entire data with negative and positive days and the entire data only with the days expected to be positive.
+
+![Result](https://github.com/ivanlflj/capstone/blob/master/result.png)
+
+We can clearly see a diference in the probabilities. In here it is showing the training data also what is not perfect but it is a good visualization.
 
 ### Reflection
-In this section, you will summarize the entire end-to-end problem solution and discuss one or two particular aspects of the project you found interesting or difficult. You are expected to reflect on the project as a whole to show that you have a firm understanding of the entire process employed in your work. Questions to ask yourself when writing this section:
-- _Have you thoroughly summarized the entire process you used for this project?_
-- _Were there any interesting aspects of the project?_
-- _Were there any difficult aspects of the project?_
-- _Does the final model and solution fit your expectations for the problem, and should it be used in a general setting to solve these types of problems?_
+The capstone was really good to do. It strached my understanding about Machine Learning and it showed me it is not easy. Getting a real world problem brings a totally new challenge. Using pipelines brings a total new possibility to test the models and improve the performance of the predictions.
+
+The Machine Learning here was important to get a good solution. The project was harder than expected and the performance was a little below than the desired. Too little trades and/or low precision.
+
+It is interesting to see how hard is to predict the market and its future.
+
+We also tested the problem trying to run as a regression but we were not successful. I didn't test too much but it is one of the branches in the Github project.
 
 ### Improvement
-In this section, you will need to provide discussion as to how one aspect of the implementation you designed could be improved. As an example, consider ways your implementation can be made more general, and what would need to be modified. You do not need to make this improvement, but the potential solutions resulting from these changes are considered and compared/contrasted to your current solution. Questions to ask yourself when writing this section:
-- _Are there further improvements that could be made on the algorithms or techniques you used in this project?_
-- _Were there algorithms or techniques you researched that you did not know how to implement, but would consider using if you knew how?_
-- _If you used your final solution as the new benchmark, do you think an even better solution exists?_
+As already mentioned the model could possibly be improve by including more stocks in the trading and getting more historical data.
 
------------
-
-**Before submitting, ask yourself. . .**
-
-- Does the project report you’ve written follow a well-organized structure similar to that of the project template?
-- Is each section (particularly **Analysis** and **Methodology**) written in a clear, concise and specific fashion? Are there any ambiguous terms or phrases that need clarification?
-- Would the intended audience of your project be able to understand your analysis, methods, and results?
-- Have you properly proof-read your project report to assure there are minimal grammatical and spelling mistakes?
-- Are all the resources used for this project correctly cited and referenced?
-- Is the code that implements your solution easily readable and properly commented?
-- Does the code execute without error and produce results similar to those reported?
+With more data the ensemble methods and maybe the neural networks could be a possibility for the project. In the case of the neural networks I would need to study more the methodologies, I read a little thinking of implementing them but a have seen they are really useful in Big Data and we didn't have this much data, it could easily overfit as the ensembles.
