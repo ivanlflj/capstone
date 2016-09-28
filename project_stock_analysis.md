@@ -1,6 +1,6 @@
-﻿# Capstone Project
+# Capstone Project
 ## Machine Learning Engineer Nanodegree
-Ivan Landim Frota Leitão Junior  
+Ivan Landim Frota Leit�o Junior  
 September 27th, 2016
 
 ## I. Definition
@@ -46,54 +46,54 @@ As bonus metric we considered the stock performance considering we bought the st
 
 The data used in this project is the historical prices and volumes of the stock for 10 years. The close price of the stock is in the graph above.
 
-![Prices graph](https://github.com/ivanlflj/capstone/blob/master/prices.png)
+![Prices graph](https://raw.githubusercontent.com/ivanlflj/capstone/master/prices.png)
 
 To improve the data we have added some new features using the technical analysis indicators as [Moving Average](http://www.investopedia.com/articles/active-trading/052014/how-use-moving-average-buy-stocks.asp) and [Relative Strength Index](http://www.investopedia.com/terms/r/rsi.asp), in the images below. The detailed information about them are in the [Jupyter notebook](https://github.com/ivanlflj/capstone/blob/master/stock_analysis_code.ipynb).
 
-![Moving Average](https://github.com/ivanlflj/capstone/blob/master/ma50.png)
+![Moving Average](https://raw.githubusercontent.com/ivanlflj/capstone/master/ma50.png)
 
-![Relative Strength Index](https://github.com/ivanlflj/capstone/blob/master/rsi.png)
+![Relative Strength Index](https://raw.githubusercontent.com/ivanlflj/capstone/master/rsi.png)
 
 The volume of trades in each day are also presented here.
 
-![Volumes](https://github.com/ivanlflj/capstone/blob/master/volumes.png)
+![Volumes](https://raw.githubusercontent.com/ivanlflj/capstone/master/volumes.png)
 
 Verifying the amount of days it moved up, we can see that it is less than half of them.
 
-![Days up](https://github.com/ivanlflj/capstone/blob/master/days_up.png)
+![Days up](https://raw.githubusercontent.com/ivanlflj/capstone/master/days_up.png)
 
 We also analyzed it depending of the day of the week and the month of the year.
 
-![Up week](https://github.com/ivanlflj/capstone/blob/master/up_week.png)
+![Up week](https://raw.githubusercontent.com/ivanlflj/capstone/master/up_week.png)
 
-![Up month](https://github.com/ivanlflj/capstone/blob/master/up_month.png)
+![Up month](https://raw.githubusercontent.com/ivanlflj/capstone/master/up_month.png)
 
 ### Exploratory Visualization
 We also had performed tests checking if moving up in the previous 5 days changed the probability of moving up today.
 
-![Up previous](https://github.com/ivanlflj/capstone/blob/master/up_previous.png)
+![Up previous](https://raw.githubusercontent.com/ivanlflj/capstone/master/up_previous.png)
 
 From the volumes we could analyze the last volumes in relation of the previous volumes.
 
-![Up volumes](https://github.com/ivanlflj/capstone/blob/master/up_volumes.png)
+![Up volumes](https://raw.githubusercontent.com/ivanlflj/capstone/master/up_volumes.png)
 
 We also verified it for different Moving averages (in relation of the last price) and Relative Strength Index.
 
-![MA5 up](https://github.com/ivanlflj/capstone/blob/master/ma5up.png)
+![MA5 up](https://raw.githubusercontent.com/ivanlflj/capstone/master/ma5up.png)
 
-![MA8 up](https://github.com/ivanlflj/capstone/blob/master/ma8up.png)
+![MA8 up](https://raw.githubusercontent.com/ivanlflj/capstone/master/ma8up.png)
 
-![MA21 up](https://github.com/ivanlflj/capstone/blob/master/ma21up.png)
+![MA21 up](https://raw.githubusercontent.com/ivanlflj/capstone/master/ma21up.png)
 
-![MA50 up](https://github.com/ivanlflj/capstone/blob/master/ma50up.png)
+![MA50 up](https://raw.githubusercontent.com/ivanlflj/capstone/master/ma50up.png)
 
-![RSI2 up](https://github.com/ivanlflj/capstone/blob/master/rsi2.png)
+![RSI2 up](https://raw.githubusercontent.com/ivanlflj/capstone/master/rsi2.png)
 
-![RSI5 up](https://github.com/ivanlflj/capstone/blob/master/rsi5.png)
+![RSI5 up](https://raw.githubusercontent.com/ivanlflj/capstone/master/rsi5.png)
 
-![RSI7 up](https://github.com/ivanlflj/capstone/blob/master/rsi7.png)
+![RSI7 up](https://raw.githubusercontent.com/ivanlflj/capstone/master/rsi7.png)
 
-![RSI14 up](https://github.com/ivanlflj/capstone/blob/master/rsi14.png)
+![RSI14 up](https://raw.githubusercontent.com/ivanlflj/capstone/master/rsi14.png)
 
 This analysis helped to notice there is some decision tree possibilities to create the model. The algorithms used followed the [sklearn map](http://scikit-learn.org/stable/tutorial/machine_learning_map/) and without this analysis I would not try decision try that was the best model.
 
@@ -188,7 +188,7 @@ If we used our model to buy one stock in the opening of the market and sell it i
 ### Free-Form Visualization
 The main image to show the performance of the model is the total data prediction if it is a positive day or not. The image is shown below and it is the entire data with negative and positive days and the entire data only with the days expected to be positive.
 
-![Result](https://github.com/ivanlflj/capstone/blob/master/result.png)
+![Result](https://raw.githubusercontent.com/ivanlflj/capstone/master/result.png)
 
 We can clearly see a difference in the probabilities. In here it is showing the training data also what is not perfect but it is a good visualization.
 
